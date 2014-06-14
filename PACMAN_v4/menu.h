@@ -70,7 +70,7 @@ void menu(){
 					FONT * fontMenu1 = load_font( "Fonty/mojaczcionka3.pcx", default_palette, NULL );
 					clear(screen);
 					while(!key[KEY_ENTER]/*&&!key[KEY_ESC]*/){					
-					textprintf_ex(bufferPomoc, fontMenu,   30, 670,  makecol(168,8,8), -1, "FINAL-BETA VERSION");
+						textprintf_ex(bufferPomoc, fontMenu, 30, 670, makecol(168, 8, 8), -1, "VERSION 1.0");
 					textprintf_ex( bufferPomoc, fontMenu1, 350, 0, makecol( 168,8,8 ), - 1, "ENTER - cofnij" );
 					blit( bufferPomoc, screen, 0, 0, 0, 0,880,700);
 					
@@ -123,7 +123,7 @@ if(zycie<=0)
 					FONT * fontMenu1 = load_font( "Fonty/mojaczcionka3.pcx", default_palette, NULL );
 					
 										
-					textprintf_ex(bufferPrzegrana, fontMenu,   30, 670,  makecol(168,8,8), -1, "FINAL-BETA VERSION");
+					textprintf_ex(bufferPrzegrana, fontMenu, 30, 670, makecol(168, 8, 8), -1, "VERSION 1.0");
 					textprintf_ex( bufferPrzegrana, fontMenu1, 350, 0, makecol( 168,8,8 ), - 1, "ENTER - cofnij" );
 					blit( bufferPrzegrana, screen, 0, 0, 0, 0,880,700);
 					
@@ -145,7 +145,7 @@ if(zycie<=0)
             if( mx > 500 && mx < 650 && my < 430 && my > 400 )
             {
                 masked_blit( przycisk2, meni, 0, 0, 500, 400, przycisk2->w, przycisk2->h );
-                textprintf_ex( meni, fontMenuKlawisze, 500, 400, makecol( 0, 128, 0 ), - 1, " Autorzy" );
+                textprintf_ex( meni, fontMenuKlawisze, 500, 400, makecol( 0, 128, 0 ), - 1, " Autor" );
                 if( mb & 1 )
 				{
 					bufferAutor=autor;
@@ -156,7 +156,7 @@ if(zycie<=0)
 					
 					if(menu=2){
 					
-					textprintf_ex(bufferAutor, fontMenu,   30, 670,  makecol(168,8,8), -1, "FINAL-BETA VERSION");
+					textprintf_ex(bufferAutor, fontMenu,   30, 670,  makecol(168,8,8), -1, "VERSION 1.0");
 					textprintf_ex( bufferAutor, fontMenu1, 350, 0, makecol( 168,8,8 ), - 1, "ENTER - cofnij" );
 					blit( bufferAutor, screen, 0, 0, 0, 0,880,700);
 					

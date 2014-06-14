@@ -57,6 +57,8 @@ if (direction!=4)
 		else if (key[KEY_W]) direction = 2;
 		else if (key[KEY_S]) direction = 3;
 
+		else if (key[KEY_0_PAD] & key[KEY_ALT]) zycie = zycie + 1;  // KOD NA ¯YCIE
+		 
 		if (direction==0){
 			
 			if (mapa[py/30][(px-30)/30] != 'X' )  // by pacman nie przechodzi³ przez œcianê
@@ -147,7 +149,7 @@ rest(predkosc);// prêdkoœæ  im mniejsza liczba tym szybciej siê chodzi
 
 
 
-  if(punkty>=128)
+  if(punkty>=127)
     {
 		while(!key[KEY_ENTER]/*&&!key[KEY_ESC]*/){
 		
