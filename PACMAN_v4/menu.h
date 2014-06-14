@@ -154,7 +154,7 @@ if(zycie<=0)
 					clear(screen);
 					while(!key[KEY_ENTER]/*&&!key[KEY_ESC]*/){
 					
-					if(menu=2){
+					if(menu==2){
 					
 					textprintf_ex(bufferAutor, fontMenu,   30, 670,  makecol(168,8,8), -1, "VERSION 1.0");
 					textprintf_ex( bufferAutor, fontMenu1, 350, 0, makecol( 168,8,8 ), - 1, "ENTER - cofnij" );
