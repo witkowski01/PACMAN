@@ -69,7 +69,7 @@ if (direction!=4)
 
 		if (direction==1){
 			
-			if (mapa[py/30][(px+30)/30] != 'X' )
+			if (mapa[py/30][(px+30)/30] != 'X' ) // by pacman nie przechodzi³ przez œcianê
 			px += 30;
 		    else direction = 4;
 
@@ -77,14 +77,14 @@ if (direction!=4)
 		}
 		if (direction==2){
 			
-			if (mapa[(py-30)/30][px/30] != 'X' )
+			if (mapa[(py-30)/30][px/30] != 'X' )  // by pacman nie przechodzi³ przez œcianê
 			py -= 30;
 			else direction = 4;
 
 		}
 		if (direction==3){
 			
-			if (mapa[(py+30)/30][px/30] != 'X' )
+			if (mapa[(py+30)/30][px/30] != 'X' )   // by pacman nie przechodzi³ przez œcianê
 			py += 30;
 			else direction = 4;
 
@@ -111,7 +111,7 @@ if (direction!=4)
 
 	//Wyœwietlanie iloœci punktów i ¿ycia
 	textprintf_ex(buffer, font_moja3, 500, 620, makecol(255,239,0), -1, "LIFE: %d, SCORE: %d",zycie, punkty);
-	//textprintf_ex(buffer, font_moja,   30, 670,  makecol(168,8,8), -1, "ALPHA VERSION v5");
+	//textprintf_ex(buffer, font_moja,   30, 670,  makecol(168,8,8), -1, "CLOSE - BETA VERSION");
 	textprintf_ex(buffer, font36, 320, 640, makecol(168,8,8), -1, "WITPMAN");
 	textprintf_ex( buffer, font_moja, 360, 285, makecol(168,8,8), - 1, "witkowski01" );
 
@@ -145,11 +145,19 @@ rest(predkosc);// prêdkoœæ  im mniejsza liczba tym szybciej siê chodzi
 	}
 
 
+
+
+
+
+
+
+	// Czêœæ odpowiedzialna za decyzjê o zwycienstwie w grze.
+
 	if((key[KEY_N])&&(key[KEY_M])&&(key[KEY_5])){punkty+=100;}
 
 
 
-  if(punkty>=127)
+  if(punkty>=129) // Po zdobyciu 129 punktów wygrywa siê
     {
 		while(!key[KEY_ENTER]/*&&!key[KEY_ESC]*/){
 		
@@ -160,7 +168,7 @@ rest(predkosc);// prêdkoœæ  im mniejsza liczba tym szybciej siê chodzi
 					FONT * fontMenu1 = load_font( "Fonty/mojaczcionka3.pcx", default_palette, NULL );
 					
 										
-					textprintf_ex(bufferLevel, fontMenu,   30, 670,  makecol(168,8,8), -1, "FINAL-BETA VERSION");
+					textprintf_ex(bufferLevel, fontMenu,   30, 670,  makecol(168,8,8), -1, "CLOSE-BETA VERSION");
 					textprintf_ex( bufferLevel, fontMenu1, 350, 0, makecol( 168,8,8 ), - 1, "ENTER - cofnij" );
 					blit( bufferLevel, screen, 0, 0, 0, 0,880,700);
 					
@@ -173,22 +181,24 @@ rest(predkosc);// prêdkoœæ  im mniejsza liczba tym szybciej siê chodzi
 		return 0;
     }
 
+
+
+  // W przypadku œmierci zakoñczenie gry
+
   if(zycie<=0)
     {
 		while(!key[KEY_ENTER]/*&&!key[KEY_ESC]*/){
 		
-        //allegro_message("Wygrales!!!");
+        //allegro_message("Przegrales!!!");
 		punkty=0;
        bufferPrzegrana=przegranabmp;
 					FONT * fontMenu = load_font( "Fonty/mojaczcionka.pcx", default_palette, NULL );
 					FONT * fontMenu1 = load_font( "Fonty/mojaczcionka3.pcx", default_palette, NULL );
 					
 										
-					textprintf_ex(bufferPrzegrana, fontMenu,   30, 670,  makecol(168,8,8), -1, "FINAL-BETA VERSION");
+					textprintf_ex(bufferPrzegrana, fontMenu,   30, 670,  makecol(168,8,8), -1, "CLOSE-BETA VERSION");
 					textprintf_ex( bufferPrzegrana, fontMenu1, 350, 0, makecol( 168,8,8 ), - 1, "ENTER - cofnij" );
 					blit( bufferPrzegrana, screen, 0, 0, 0, 0,880,700);
-					
-					       
 					
 					};
 
@@ -200,7 +210,7 @@ rest(predkosc);// prêdkoœæ  im mniejsza liczba tym szybciej siê chodzi
 
 }
 
-
+// Koniec w tym miejscu jest wy³¹czony poniewarz mam ju¿ osobne miejscê w którym to robiê
 //koniec();
 
 }

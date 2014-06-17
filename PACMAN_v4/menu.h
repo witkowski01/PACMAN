@@ -1,7 +1,7 @@
 //W³asnoœæ Konrada Witkowskiego
 //Nie wyra¿am zgody na kopiowanie choæ fragmentu kodu, zw³aszcza bez mojej wiedzy
 //Nie za³¹czam plików potrzebnych do odpalenia gry jak grafiki, muzyka, czcionki. W celu ich uzyskania pisz na e-mail witkowski01@wp.pl
-//Chcê zwolnienie z egzaminu
+
 
 #include  "initAllegro.h";
 #include <iostream>
@@ -45,8 +45,7 @@ void menu(){
 	przycisk3 = load_bmp( "Bitmapy/przycisk1.bmp", default_palette );
 	przycisk32 = load_bmp( "Bitmapy/przycisk1.bmp", default_palette );
 	serce = load_bmp("Bitmapy/serce.bmp",default_palette );
-
-	autor = load_bmp( "Bitmapy/autor.bmp", default_palette );
+	autor = load_bmp("Bitmapy/autor.bmp", default_palette);
 
     int menu = 1;
     
@@ -148,6 +147,7 @@ if(zycie<=0)
                 textprintf_ex( meni, fontMenuKlawisze, 500, 400, makecol( 0, 128, 0 ), - 1, " Autor" );
                 if( mb & 1 )
 				{
+
 					bufferAutor=autor;
 					FONT * fontMenu = load_font( "Fonty/mojaczcionka.pcx", default_palette, NULL );
 					FONT * fontMenu1 = load_font( "Fonty/mojaczcionka3.pcx", default_palette, NULL );

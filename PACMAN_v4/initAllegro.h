@@ -51,7 +51,7 @@ int initAllegro(){
     }
 
 	bufferAutor= create_bitmap(880,700);
-	if (!buffer)
+	if (!bufferAutor)
     {
         set_gfx_mode(GFX_TEXT,0,0,0,0);
         allegro_message("Nie mogê utworzyæ bufora !");

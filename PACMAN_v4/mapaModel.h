@@ -1,7 +1,7 @@
 //W³asnoœæ Konrada Witkowskiego
 //Nie wyra¿am zgody na kopiowanie choæ fragmentu kodu, zw³aszcza bez mojej wiedzy
 //Nie za³¹czam plików potrzebnych do odpalenia gry jak grafiki, muzyka, czcionki. W celu ich uzyskania pisz na e-mail witkowski01@wp.pl
-//Chcê zwolnienie z egzaminu
+
 
 #define MAXWier 20   // wysokoœæ y  , iloœæ wierszy  row
 #define MAXKol  31   // szerokoœæ x , iloœæ kolumn   col
